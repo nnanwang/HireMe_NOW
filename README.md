@@ -7,4 +7,5 @@ https://www.figma.com/file/m0DCB8iKCoI0Y13mn6RxnK/Resume-Builder-Website-User-Fl
 - Provide a professional-looking document *(PDF)*
 - Variety templates that suitable for different industry *(SDE, design, financial)*
 - Input keywords to generator job description or project description *(apply ChatGPT 3)*
+- Help answer job application questions
 - Translate resume(optional)

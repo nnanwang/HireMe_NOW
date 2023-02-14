@@ -1,5 +1,5 @@
 # Hire me now!
-An Resume/Coverletter Builder website applied ChatGPT
+A Resume/Coverletter Builder website applied ChatGPT.
 ## Useful Links
 - Figma User Work Flow Link <br>
   https://www.figma.com/file/m0DCB8iKCoI0Y13mn6RxnK/Resume-Builder-Website-User-Flow-(Community)?node-id=0%3A1&t=Boe1amln4n1tCPkD-1

@@ -17,30 +17,37 @@ Our platform is designed to help job seekers stand out in a competitive job mark
 
 ## Setup
 
- To setup enrironment for this website app, you need to perpare the following tools: shell, [conda/miniconda](https://docs.conda.io/en/latest/miniconda.html).  With conda/miniconda, we would be convinent to manage our python versions.
+ To setup enrironment for this website app, you need to perpare the following tools: shell, [conda/miniconda](https://docs.conda.io/en/latest/miniconda.html).  
+ 
+ With shell (which is already in your computer!), we can use conda/miniconda, install pacages, and run our website. 
+ 
+ With conda/miniconda, we would be convinent to manage our python versions. Conda is a useful tool which integrate many platform such as: Jupyter notebook, Pycharm, ect. However, I would highly recommanded you just install **miniconda**. This is because if you don't need that much platforms (At least I don't need so much), then miniconda will **save you a lot of spaces**. At the same time, it's also **effectively enough for us to manage our python environments**, which is the main target for us to use in this project. Therefore, here I just put how to install miniconda for your computer.
 
-### Shell
-In shell (which is already in your computer!), we can use conda/miniconda, install pacages, and run our website. All of them will be very helpful for this project.
+PS: Here I provided one method of how to use shell and miniconda. Feel free to use another shell tools or conda, they should work well.
+
+### Windows
+
+If you are a **Windows** user:
+
+1. Open your shell. You need to tape **'win+R'** on your keyboard, and then type **'cmd'**, so that you will get your shell.
+2. Download [miniconda - for windows](https://docs.conda.io/en/latest/miniconda.html#windows-installers). Just download the installer and click 'next' would be fine. Please check your computer to make sure it's 32 bit or 64 bit.
 
 
-#### Usage
+### Mac
 
-If you are a **Windows** user, you need to tape **'win+R'** on your keyboard, and then type **'cmd'**, so that you will get your shell.
+If you are a **Mac** user:
+
+1. Open your shell. You need to tape **'Command+space'** on your keyboard, and then enter **'terminal'**, so that you will get your shell.
+
+2. Download [miniconda - for mac](https://docs.conda.io/en/latest/miniconda.html#macos-installers). Just download the .pkg file and click 'next' would be fine.
 
 
-If you are a **Mac** user, you need to tape **'Command+space'** on your keyboard, and then enter **'terminal'**, so that you will get your shell.
+### Check your environment
 
-PS: Feel free to use another shell tools, they should all works well.
-
-### Conda
-
-When you get ready on your shell, then you can install your conda/miniconda on your computer. Conda is a useful tool which integrate many platform such as: Jupyter notebook, Pycharm, ect. However, I would highly recommanded you just install **miniconda**. This is because if you don't need that much platforms (At least I don't need so much), then miniconda will **save you a lot of spaces**. At the same time, it's also **effectively enough for us to manage our python environments**, which is the main target for us to use in this project. Therefore, here I just put how to install miniconda for your computer.
-
-#### Installation
-
-If you are a windows user, you can download it [here](https://docs.conda.io/en/latest/miniconda.html#windows-installers). Just download the installer and click 'next' would be fine. Please check your computer to make sure it's 32 bit or 64 bit.
-
-If you are a Mac user, you can download it [here](https://docs.conda.io/en/latest/miniconda.html#macos-installers). Just download the .pkg file and click 'next' would be fine.
+Now you should have all environment you need:
+- [x] shell
+  
+- [x] miniconda
 
 Check your miniconda in your shell:
 ```
@@ -51,9 +58,9 @@ You should get result like (Depending on the version of your conda):
 conda 4.14.0
 ```
 
-### Python version
+### Setup suitable Python version
 
-Now we are ready for manage our python version. The python version we used in this project is python 3.11. And all the pacages we used is in [env.yml](##env.yml). The followings is the details about how to setup a suitable python environment for this project.
+The python version we used in this project is python 3.11. And all the pacages we used is in [requirements.txt](##env.yml). The followings is the details about how to setup a suitable python environment for this project.
 
 First, open your shell (see [Shell](#shell) for details). Then, git clone our project to your location by:
 ```
@@ -63,11 +70,59 @@ Then, change your shell location to your project:
 ```
 cd project-location
 ```
-Use conda to create an environment for this project:
+After that, use conda to create an environment for this project:
 ```
-conda create
+conda create -n hire_me_now python=3.11
 ``` 
+Then, we have an environment which calls 'hire_me_now', we need to activate this environment first, and install the pacages we need:
+```
+conda activate hire_me_now    # you should see the env name in the brackets changed from 'base' to 'hire_me_now'
+pip install -r requirements.txt    # install packages we need
+```
 
+Now you are ready to develop this project (Yeah!)
+
+## Develop project
+
+When you want to develop this project, and run this project, you need to go to hmn_project ([here](#folder-stucture) is the folders structure), and then 
+```
+cd <hmn_project>   # go to this folder
+python manage.py runserver
+```
+This website should be run on your computer.
+
+## folder stucture
+
+Here is a folder stucture for what you should have when you download this project.
+
+```
+HireMe_NOW/
+├── README.md
+├── hmn_project
+│   ├── db.sqlite3
+│   ├── hire_me_now
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations
+│   │   │   └── __init__.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   ├── hmn_project
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   ├── settings.cpython-311.pyc
+│   │   │   ├── urls.cpython-311.pyc
+│   │   │   └── wsgi.cpython-311.pyc
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   └── manage.py
+└── requirements.txt
+```
 
 ## Useful Links
 - Figma User Work Flow Link <br>

@@ -24,7 +24,15 @@ def home(request):
             logit_bias={}, # Modify the likelihood of specified tokens appearing in the completion. {"Token": presentage range [-100, 100]}
         )
 
+        # Parse the response
+        response = response["choices"][0]["text"].strip()
+        
         return render(request=request, template_name='screen/home.html', context={"question":question, "response": response})
     
     return render(request=request, template_name='screen/home.html', context={})
+
+def multiresponse(request):
+
+
+    return
     

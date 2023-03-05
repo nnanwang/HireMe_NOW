@@ -91,7 +91,9 @@ OPEN_AI_KEY=[Your_OpenAIKey_Value]
 CORS_ADD=http://localhost:3000
 ```
 
-PS: You can replace **CORS_ADD** with your own frontend server address.
+OPEN_AI_KEY: You need to replace [Your_OpenAIKey_Value] with your own **OpenAIKey**. For more details, please read [OpenAI document](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key).
+
+CORS_ADD: You can replace **CORS_ADD** with your own frontend server address.
 
 Now you are ready to develop this project (Yeah!)
 
@@ -120,7 +122,7 @@ HireMe_NOW/
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── migrations
-│   │   │   ├── __init__.py
+│   │   │   └── __init__.py
 │   │   ├── models.py
 │   │   ├── serializers.py
 │   │   ├── templates
@@ -133,6 +135,7 @@ HireMe_NOW/
 │   │   └── views.py
 │   ├── hmn_project
 │   │   ├── __init__.py
+│   │   ├── .env
 │   │   ├── asgi.py
 │   │   ├── settings.py
 │   │   ├── urls.py
@@ -142,10 +145,6 @@ HireMe_NOW/
 ```
 
 ## Appendix
-
-### OpenaiAPIKey
-
-Not finish yet.
 
 ## Useful Links
 - Figma User Work Flow Link <br>

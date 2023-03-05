@@ -120,9 +120,16 @@ HireMe_NOW/
 │   │   ├── admin.py
 │   │   ├── apps.py
 │   │   ├── migrations
-│   │   │   └── __init__.py
+│   │   │   ├── __init__.py
 │   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── templates
+│   │   │   ├── base.html
+│   │   │   ├── navbar.html
+│   │   │   └── screen
+│   │   │       └── home.html
 │   │   ├── tests.py
+│   │   ├── urls.py
 │   │   └── views.py
 │   ├── hmn_project
 │   │   ├── __init__.py

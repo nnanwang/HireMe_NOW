@@ -14,6 +14,9 @@ Our platform is designed to help job seekers stand out in a competitive job mark
 
 5. Personalization: A feature that customizes the website's tools and resources based on the user's input and behavior. The more users interact with the website, the more personalized and effective their results become.
 
+## About this rep
+
+This rep is the backend for the website "hire me now". It contains skills: Conda, Django, OpenAI, Restful.
 
 ## Setup Envrionment
 

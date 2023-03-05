@@ -1,10 +1,12 @@
 from django.shortcuts import render
 import openai
 from hire_me_now.secret.OpenaiAPIKey import get_key
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
 
 # Create Homepage
 def home(request):
-    # We want to render a webpage, request, template_name => page name, context => return
     if request.method == "POST":
         question = request.POST['question']
         print(question)
@@ -27,12 +29,19 @@ def home(request):
         # Parse the response
         response = response["choices"][0]["text"].strip()
         
+        # We want to render a webpage, request, template_name => page name, context => return
         return render(request=request, template_name='screen/home.html', context={"question":question, "response": response})
     
     return render(request=request, template_name='screen/home.html', context={})
 
-def multiresponse(request):
+@api_view(['GET'])
+def getRoutes(request):
 
-
-    return
+    routes = [
+        "This is a test string",
+        11111,
+        "Here is multiple data"
+    ]
+    
+    return Response(routes)
     

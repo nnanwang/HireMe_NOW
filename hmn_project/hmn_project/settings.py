@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hire_me_now',  # add our apps
+    "rest_framework", # restful
 ]
 
 MIDDLEWARE = [

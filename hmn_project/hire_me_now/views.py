@@ -1,17 +1,22 @@
 from django.shortcuts import render
 import openai
-from hire_me_now.secret.OpenaiAPIKey import get_key
+from os.path import dirname, abspath, join
+import environ
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
+BASE_DIR = join(dirname(dirname(abspath(__file__))), 'hmn_project')
+env = environ.Env()
+environ.Env.read_env(join(BASE_DIR, '.env'))
 
 # Create Homepage
 def home(request):
     if request.method == "POST":
         question = request.POST['question']
         print(question)
+        
         # Set API Key
-        openai.api_key = get_key()
+        openai.api_key = env('OPEN_AI_KEY')
         # Create OpenAI Instance
         openai.Model.list()
         # Make a Completion

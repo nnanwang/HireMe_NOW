@@ -20,5 +20,5 @@ from hire_me_now import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('routes', views.getRoutes, name="routes")
+    path('api/routes', views.getRoutes, name="routes")
 ]

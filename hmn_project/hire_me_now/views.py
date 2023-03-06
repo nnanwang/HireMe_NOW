@@ -1,15 +1,22 @@
 from django.shortcuts import render
 import openai
-from hire_me_now.secret.OpenaiAPIKey import get_key
+from os.path import dirname, abspath, join
+import environ
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+BASE_DIR = join(dirname(dirname(abspath(__file__))), 'hmn_project')
+env = environ.Env()
+environ.Env.read_env(join(BASE_DIR, '.env'))
 
 # Create Homepage
 def home(request):
-    # We want to render a webpage, request, template_name => page name, context => return
     if request.method == "POST":
         question = request.POST['question']
         print(question)
+        
         # Set API Key
-        openai.api_key = get_key()
+        openai.api_key = env('OPEN_AI_KEY')
         # Create OpenAI Instance
         openai.Model.list()
         # Make a Completion
@@ -27,12 +34,19 @@ def home(request):
         # Parse the response
         response = response["choices"][0]["text"].strip()
         
+        # We want to render a webpage, request, template_name => page name, context => return
         return render(request=request, template_name='screen/home.html', context={"question":question, "response": response})
     
     return render(request=request, template_name='screen/home.html', context={})
 
-def multiresponse(request):
+@api_view(['GET'])
+def getRoutes(request):
 
-
-    return
+    routes = [
+        "This is a test string",
+        11111,
+        "Here is multiple data"
+    ]
+    
+    return Response(routes)
     

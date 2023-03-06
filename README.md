@@ -14,13 +14,17 @@ Our platform is designed to help job seekers stand out in a competitive job mark
 
 5. Personalization: A feature that customizes the website's tools and resources based on the user's input and behavior. The more users interact with the website, the more personalized and effective their results become.
 
+## About this rep
+
+This rep is the backend for the website "hire me now". It contains skills: Conda, Django, OpenAI, Restful.
 
 ## Setup Envrionment
 
 To totally run this code, you need: 
 
-- Setup necessary system environment 
-- Setup suitable Python version (including special packages)
+  - [Setup necessary system environment](#1-setup-necessary-system-environment)
+  - [Setup suitable Python version](#2-setup-suitable-python-version)
+  - [Setup necessary environment variables](#3-setup-necessary-environment-variables)
 
 ---
 
@@ -76,7 +80,24 @@ conda activate hire_me_now    # you should see the env name in the brackets chan
 pip install -r requirements.txt    # install packages we need
 ```
 
+### 3. Setup necessary environment variables
+
+For the final step, our website requires some specific private environment variables. These parameters are integral but harmful when you share them to public, such as OpenAIAPIKey(Others can use it and incur costs). Therefore, you need to set up these variables as local environment variables to make sure these variables can only be seen on your computer.
+
+For setup envrionment variables, all you need to do is create a file, named **'.env'**, into your **hmn_project** folder. Then, in your **'.env'** file, you need to add the following contents:
+
+```
+OPEN_AI_KEY=[Your_OpenAIKey_Value]
+CORS_ADD=http://localhost:3000
+```
+
+OPEN_AI_KEY: You need to replace [Your_OpenAIKey_Value] with your own **OpenAIKey**. For more details, please read [OpenAI document](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key).
+
+CORS_ADD: You can replace **CORS_ADD** with your own frontend server address.
+
 Now you are ready to develop this project (Yeah!)
+
+
 
 ## Develop Project
 
@@ -86,16 +107,6 @@ cd <hmn_project>   # go to this folder
 python manage.py runserver
 ```
 This website should be run on your computer.
-
-Several useful files you should know for developing this project:
-| File | Location | Description |
-|---|---|---|
-| [views.py](##hmn_project/hire_me_now/views.py) | [HireMe_NOW/hmn_project/hire_me_now](##hmn_project/hire_me_now) | |
-| [urls.py (hire_me_now)](##hmn_project/hire_me_now/urls.py) | [HireMe_NOW/hmn_project/hire_me_now](##hmn_project/hire_me_now) | |
-| [urls.py (hmn_project)](##hmn_project/hmn_project/urls.py) | [HireMe_NOW/hmn_project](##hmn_project/hmn_project) | |
-| [settings.py](##hmn_project/hmn_project/settings.py) | [HireMe_NOW/hmn_project](##hmn_project/hmn_project) | |
-| [OpenaiAPIKey.py](##hmn_project/hire_me_now/secret/OpenaiAPIKey.py)| [HireMe_NOW/hmn_project/hire_me_now/secret](##hmn_project/hire_me_now/secret) | This is the file for you to put your OpenaiAPIKey, and make sure it wouldn't leak to website(See [details](#openaiapikey)). |
-| **PS: Website screens are all in templates folder** |||
 
 ## Folder Stucture
 
@@ -113,10 +124,18 @@ HireMe_NOW/
 │   │   ├── migrations
 │   │   │   └── __init__.py
 │   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── templates
+│   │   │   ├── base.html
+│   │   │   ├── navbar.html
+│   │   │   └── screen
+│   │   │       └── home.html
 │   │   ├── tests.py
+│   │   ├── urls.py
 │   │   └── views.py
 │   ├── hmn_project
 │   │   ├── __init__.py
+│   │   ├── .env
 │   │   ├── asgi.py
 │   │   ├── settings.py
 │   │   ├── urls.py
@@ -126,10 +145,6 @@ HireMe_NOW/
 ```
 
 ## Appendix
-
-### OpenaiAPIKey
-
-Not finish yet.
 
 ## Useful Links
 - Figma User Work Flow Link <br>

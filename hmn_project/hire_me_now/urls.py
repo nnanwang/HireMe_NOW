@@ -19,5 +19,6 @@ from django.urls import path
 from hire_me_now import views
 
 urlpatterns = [
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('api/routes', views.getRoutes, name="routes")
 ]
